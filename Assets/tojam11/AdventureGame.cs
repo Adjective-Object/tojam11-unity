@@ -111,6 +111,7 @@ namespace Adventure
 		/// </summary>
 		protected override void Initialize ()
 		{
+			UnityEngine.Debug.Log("AdventureGame Initialize Called");
             currentState = GameState.StartGame;
 
 			// initialize my fields
@@ -174,6 +175,7 @@ namespace Adventure
 		/// </summary>
 		protected override void LoadContent ()
 		{
+			UnityEngine.Debug.Log("AdventureGame LoadContent Called");
 			// Create a new SpriteBatch, which can be used to draw textures.
 			entityBatch = new SpriteBatch (GraphicsDevice);
 
@@ -247,7 +249,7 @@ namespace Adventure
 		protected override void Update (GameTime gameTime)
 		{
 			Input.Update ();
-			Input.disabled = atari.Running || phoneGUI.Running;
+            Input.disabled = atari.Running || phoneGUI.Running;
 			TInput.Update ();
 
 			if (currentState == GameState.StartGame)

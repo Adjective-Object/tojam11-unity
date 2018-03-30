@@ -17,6 +17,7 @@ namespace Microsoft.Xna.Framework
         #region UnityInterop
         public void Start()
         {
+            UnityEngine.Debug.Log("Calling Initialize on start");
             this.Initialize();
         }
 
@@ -26,7 +27,9 @@ namespace Microsoft.Xna.Framework
                 new TimeSpan(0, 0, 0, (int)(UnityEngine.Time.deltaTime * 1000)),
                 new TimeSpan(0, 0, 0, (int)(UnityEngine.Time.realtimeSinceStartup * 1000))
             );
+            UnityEngine.Debug.Log("Update");
             this.Update(time);
+            UnityEngine.Debug.Log("Draw");
             this.Draw(time);
         }
         #endregion
@@ -35,6 +38,7 @@ namespace Microsoft.Xna.Framework
         protected bool IsMouseVisible { get { return false; } set { } }
 
         protected virtual void Initialize() {
+            UnityEngine.Debug.Log("Initialize called in base class");
             // subclass inits in override, then we load content
             this.LoadContent();
         }

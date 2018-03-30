@@ -4,18 +4,29 @@ namespace Microsoft.Xna.Framework.Content
     public class ContentManager
     {
         string mRootDirectory = "";
+        string mXnaResourcesRootPath = "";
         Game mGame;
 
         public ContentManager(Game game) {
             this.mGame = game;
         }
 
-        public T Load<T>(string filename) where T : FakeXna.Content.IWrappedResource
+        public void SetResourcesRootPath(String xnaRootPath) {
+            mXnaResourcesRootPath = xnaRootPath;
+        }
+
+        public T Load<T>(string filename) where T : FakeXna.Content.IWrappedResource, new()
         {
-            T result = default(T);
+            T result = new T();
+            string loadedPath = System.IO.Path.Combine(System.IO.Path.Combine(mXnaResourcesRootPath, mRootDirectory), filename);
             Object loadedResource = UnityEngine.Resources.Load(
-                System.IO.Path.Combine(mRootDirectory, filename)
+                loadedPath
             );
+            if (loadedResource == null) {
+                UnityEngine.Debug.LogWarning(
+                    "Failed to load resource at path " + loadedPath
+                );
+            }
             result.setLoadedResource(mGame, loadedResource);
             return result;
         }
