@@ -1,0 +1,7 @@
+bin
+obj
+*.mgcb
+Adventure.csproj
+OpenTK.dll.config
+Properties
+*.psd

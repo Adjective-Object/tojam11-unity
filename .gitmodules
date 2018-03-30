@@ -1,0 +1,3 @@
+[submodule "Assets/QuickUnityTools"]
+	path = Assets/QuickUnityTools
+	url = https://github.com/adamgryu/QuickUnityTools.git

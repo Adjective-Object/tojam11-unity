@@ -1,0 +1,10 @@
+﻿using System;
+namespace FakeXna
+{
+	public class Microsoft
+	{
+		public Microsoft()
+		{
+		}
+	}
+}
