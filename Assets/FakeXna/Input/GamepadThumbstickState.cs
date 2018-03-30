@@ -14,39 +14,37 @@ namespace Microsoft.Xna.Framework.Input
 
         public GamepadThumbstickState(PlayerIndex index)
         {
-
-            mLeft = new Vector2(
-                UnityEngine.Input.GetAxis(
-                    XnaGamePadToUnityInput.XnaJoystickToUnityJoystickName(
-                        index,
-                        ControllerJoystick.Left,
-                        AxisDirection.X
-                    )
-                ),
-                UnityEngine.Input.GetAxis(
-                    XnaGamePadToUnityInput.XnaJoystickToUnityJoystickName(
-                        index,
-                        ControllerJoystick.Left,
-                        AxisDirection.Y
-                    )
-                )
+            string leftHorizontal = XnaGamePadToUnityInput.XnaJoystickToUnityJoystickName(
+                index,
+                ControllerJoystick.Left,
+                AxisDirection.X
+            );
+            string leftVertical = XnaGamePadToUnityInput.XnaJoystickToUnityJoystickName(
+                index,
+                ControllerJoystick.Left,
+                AxisDirection.Y
             );
 
+            string rightHorizontal = XnaGamePadToUnityInput.XnaJoystickToUnityJoystickName(
+                index,
+                ControllerJoystick.Right,
+                AxisDirection.X
+            );
+            string rightVertical = XnaGamePadToUnityInput.XnaJoystickToUnityJoystickName(
+                index,
+                ControllerJoystick.Right,
+                AxisDirection.Y
+            );
+
+            Func<String, float> axisOrZero = (String axis) => axis != null ? UnityEngine.Input.GetAxis(axis) : 0f;
+
+            mLeft = new Vector2(
+                axisOrZero(leftHorizontal),
+                axisOrZero(leftVertical)
+            );
             mRight = new Vector2(
-                UnityEngine.Input.GetAxis(
-                    XnaGamePadToUnityInput.XnaJoystickToUnityJoystickName(
-                        index,
-                        ControllerJoystick.Right,
-                        AxisDirection.X
-                    )
-                ),
-                UnityEngine.Input.GetAxis(
-                    XnaGamePadToUnityInput.XnaJoystickToUnityJoystickName(
-                        index,
-                        ControllerJoystick.Right,
-                        AxisDirection.Y
-                    )
-                )
+                axisOrZero(rightHorizontal),
+                axisOrZero(rightVertical)
             );
         }
     }

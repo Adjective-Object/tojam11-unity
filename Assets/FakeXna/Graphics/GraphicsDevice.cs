@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Microsoft.Xna.Framework.Graphics
 {
     // TODO this will hold the texture which is rendered to the quad, I think?
-    public class GraphicsDevice
+    public class GraphicsDevice : IDisposable
     {
         public Viewport Viewport;
 
@@ -15,14 +15,14 @@ namespace Microsoft.Xna.Framework.Graphics
             }
         }
 
-        private UnityEngine.Texture2D mTexture;
+        private RenderTexture mTexture;
         public GraphicsDevice(int width, int height)
         {
-            this.mTexture = new UnityEngine.Texture2D(
+            this.mTexture = new RenderTexture(
                 width,
                 height,
-                TextureFormat.RGB24,
-                false // mipmap
+                24, // depth (bits in depth buffer)
+                RenderTextureFormat.ARGB32
             );
             Viewport = new Viewport(0, 0, this.mTexture.width, this.mTexture.height);
         }
@@ -35,15 +35,18 @@ namespace Microsoft.Xna.Framework.Graphics
         public void Clear(Color color)
         {
             UnityEngine.Color fillColor = new UnityEngine.Color(color.R, color.G, color.B);
-            UnityEngine.Color[] fillColorArray = mTexture.GetPixels();
+            RenderTexture.active = mTexture;
+            // TODO abstract accross different rendering backends. Maybe use blit here with a
+            // 1 px texture so that untiy handles that abstraction for us?
+            GL.Begin(GL.TRIANGLES);
+            GL.Clear(true, true, fillColor);
+            GL.End();
+        }
 
-            for (var i = 0; i < fillColorArray.Length; ++i)
-            {
-                fillColorArray[i] = fillColor;
-            }
-
-            mTexture.SetPixels(fillColorArray);
-            mTexture.Apply();
+        // Perform cleanup on garbage collect
+        public void Dispose()
+        {
+            mTexture.Release();
         }
     }
 }
