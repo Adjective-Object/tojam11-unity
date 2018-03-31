@@ -102,6 +102,14 @@ namespace Microsoft.Xna.Framework.Graphics
             A = (byte)255;
         }
 
+        public Color(int r, int g, int b)
+        {
+            _packedValue = 0;
+            R = (byte)r;
+            G = (byte)g;
+            B = (byte)b;
+            A = (byte)255;
+        }
 
         public Color(byte r, byte g, byte b, byte alpha)
         {

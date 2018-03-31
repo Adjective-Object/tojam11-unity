@@ -194,8 +194,8 @@ namespace Adventure
 
 			//Tell font loader to load Monaco as defaulft font
 			defaultFont = Content.Load<SpriteFont>("Monaco");
-			tinyFont = Content.Load<SpriteFont>("MonacoTiny");
-            titleFont = Content.Load<SpriteFont>("MonacoTitle");
+			tinyFont = Content.Load<SpriteFont>("Monaco");
+            titleFont = Content.Load<SpriteFont>("Monaco");
 			SpeechText.LoadFont("Monaco", defaultFont);
 
 			// load the shadow texture
@@ -231,8 +231,8 @@ namespace Adventure
 			tylerSquare = Content.Load<Texture2D> ("square");
 			tylerSheet = Content.Load<Texture2D> ("tylerSheet");
             tylerFont = Content.Load<SpriteFont> ("Vectorb");
-            tylerFont2 = Content.Load<SpriteFont> ("arial");
-            tylerFont3 = Content.Load<SpriteFont> ("visitor");
+            tylerFont2 = Content.Load<SpriteFont> ("Monaco"); // Should be Arial but I don't have that
+            tylerFont3 = Content.Load<SpriteFont> ("visitor1");
 		}
 
 

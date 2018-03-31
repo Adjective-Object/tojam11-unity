@@ -314,14 +314,70 @@ MonoBehaviour:
     xnaButton: 0
     unityButtonName: 
   joystickMappings:
-  - xnaControllerNumber: 0
+  - xnaControllerNumber: 1
     xnaAxisDirection: 0
     xnaJoystickAxis: 0
-    unityAxisName: 
-  - xnaControllerNumber: 0
+    unityAxisName: P1LeftHorizontal
+  - xnaControllerNumber: 1
+    xnaAxisDirection: 1
+    xnaJoystickAxis: 0
+    unityAxisName: P1LeftVertical
+  - xnaControllerNumber: 1
+    xnaAxisDirection: 0
+    xnaJoystickAxis: 1
+    unityAxisName: P1RightHorizontal
+  - xnaControllerNumber: 1
+    xnaAxisDirection: 1
+    xnaJoystickAxis: 1
+    unityAxisName: P1RightVertical
+  - xnaControllerNumber: 2
     xnaAxisDirection: 0
     xnaJoystickAxis: 0
-    unityAxisName: 
+    unityAxisName: P2LeftHorizontal
+  - xnaControllerNumber: 2
+    xnaAxisDirection: 1
+    xnaJoystickAxis: 0
+    unityAxisName: P2LeftVertical
+  - xnaControllerNumber: 2
+    xnaAxisDirection: 0
+    xnaJoystickAxis: 1
+    unityAxisName: P2RightHorizontal
+  - xnaControllerNumber: 2
+    xnaAxisDirection: 1
+    xnaJoystickAxis: 1
+    unityAxisName: P3RightVertical
+  - xnaControllerNumber: 3
+    xnaAxisDirection: 0
+    xnaJoystickAxis: 0
+    unityAxisName: P3LeftHorizontal
+  - xnaControllerNumber: 3
+    xnaAxisDirection: 1
+    xnaJoystickAxis: 0
+    unityAxisName: P3LeftVertical
+  - xnaControllerNumber: 3
+    xnaAxisDirection: 0
+    xnaJoystickAxis: 1
+    unityAxisName: P3RightHorizontal
+  - xnaControllerNumber: 3
+    xnaAxisDirection: 1
+    xnaJoystickAxis: 1
+    unityAxisName: P4RightVertical
+  - xnaControllerNumber: 4
+    xnaAxisDirection: 0
+    xnaJoystickAxis: 0
+    unityAxisName: P4LeftHorizontal
+  - xnaControllerNumber: 4
+    xnaAxisDirection: 1
+    xnaJoystickAxis: 0
+    unityAxisName: P4LeftVertical
+  - xnaControllerNumber: 4
+    xnaAxisDirection: 0
+    xnaJoystickAxis: 1
+    unityAxisName: P4RightHorizontal
+  - xnaControllerNumber: 4
+    xnaAxisDirection: 1
+    xnaJoystickAxis: 1
+    unityAxisName: P2RightVertical
 --- !u!64 &2039329610
 MeshCollider:
   m_ObjectHideFlags: 0

@@ -13,9 +13,18 @@ namespace Microsoft.Xna.Framework.Input
             Array values = Keys.GetValues(typeof(Keys));
             foreach (Keys xnaKey in values)
             {
-                UnityEngine.KeyCode unityKeyCode = XnaKeysToUnityKeyCode.XnaToUnity(xnaKey);
-                downKeys[xnaKey] = UnityEngine.Input.GetKeyDown(unityKeyCode);
-                upKeys[xnaKey] = UnityEngine.Input.GetKeyUp(unityKeyCode);
+                if (xnaKey == Keys.None) continue;
+                UnityEngine.KeyCode? unityKeyCode = XnaKeysToUnityKeyCode.XnaToUnity(xnaKey);
+                if (unityKeyCode.HasValue)
+                {
+                    downKeys[xnaKey] = UnityEngine.Input.GetKeyDown(unityKeyCode.Value);
+                    upKeys[xnaKey] = UnityEngine.Input.GetKeyUp(unityKeyCode.Value);
+                }
+                else
+                {
+                    downKeys[xnaKey] = false;
+                    upKeys[xnaKey] = false;
+                }
             }
         }
 

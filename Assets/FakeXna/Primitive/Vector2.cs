@@ -447,10 +447,6 @@ namespace Microsoft.Xna.Framework
             });
         }
 
-        public UnityEngine.Vector2 ToUnity() {
-            return new UnityEngine.Vector2(X, Y);
-        }
-
         #endregion Public Methods
 
 
@@ -533,5 +529,11 @@ namespace Microsoft.Xna.Framework
         }
 
         #endregion Operators
+
+        #region FakeXnaExtensions
+        public UnityEngine.Vector2 ToUnity() {
+            return new UnityEngine.Vector2(X, Y);
+        }
+        #endregion
     }
 }
