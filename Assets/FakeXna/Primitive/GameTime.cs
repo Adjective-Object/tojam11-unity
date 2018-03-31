@@ -37,5 +37,9 @@ namespace Microsoft.Xna.Framework
             mTotalGameTime = totalGameTime;
             
         }
+
+        public override string ToString() {
+            return ElapsedGameTime + "  " + TotalGameTime;
+        }
     }
 }

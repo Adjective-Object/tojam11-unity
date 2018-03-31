@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Diagnostics;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using UnityEngine;
+
 namespace Microsoft.Xna.Framework
 {
     public abstract class Game
@@ -24,10 +27,10 @@ namespace Microsoft.Xna.Framework
         public void Update()
         {
             GameTime time = new GameTime(
-                new TimeSpan(0, 0, 0, (int)(UnityEngine.Time.deltaTime * 1000)),
-                new TimeSpan(0, 0, 0, (int)(UnityEngine.Time.realtimeSinceStartup * 1000))
+                new TimeSpan(0, 0, 0, 0, (int)(UnityEngine.Time.deltaTime * 1000f)),
+                new TimeSpan(0, 0, 0, 0, (int)(UnityEngine.Time.time * 1000f))
             );
-            UnityEngine.Debug.Log("Update");
+            UnityEngine.Debug.Log("Update: " + time);
             this.Update(time);
             UnityEngine.Debug.Log("Draw");
             this.Draw(time);
