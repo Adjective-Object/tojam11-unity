@@ -8,11 +8,6 @@ namespace FakeXna.Input
     {
         private static Dictionary<Keys, Nullable<UnityEngine.KeyCode> > mKeycodeMap = new Dictionary<Keys, Nullable<UnityEngine.KeyCode> >
         {
-            {Keys.Space, UnityEngine.KeyCode.Space},
-            {Keys.Up, UnityEngine.KeyCode.UpArrow},
-            {Keys.Down, UnityEngine.KeyCode.DownArrow},
-            {Keys.Left, UnityEngine.KeyCode.LeftArrow},
-            {Keys.Right, UnityEngine.KeyCode.RightArrow},
             {Keys.Back, UnityEngine.KeyCode.Backspace},
             {Keys.Tab, UnityEngine.KeyCode.Tab},
             {Keys.Enter, UnityEngine.KeyCode.Return},
