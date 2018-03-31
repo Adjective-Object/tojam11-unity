@@ -82,11 +82,11 @@ namespace FakeXna.Input
             };
             if (!mapperInstance.mXnaButtonsToUnityNames.ContainsKey(buttonKey))
             {
-                UnityEngine.Debug.LogWarning(String.Format(
+                /*UnityEngine.Debug.LogWarning(String.Format(
                     "no mapping defined for xna button {0}:{1}",
                     xnaControllerNumber,
                     xnaButton
-                ));
+                ));*/ 
                 return null;
             }
             return mapperInstance.mXnaButtonsToUnityNames[buttonKey];
@@ -103,12 +103,12 @@ namespace FakeXna.Input
             };
             if (!mapperInstance.mXnaAxisToUnityNames.ContainsKey(axisKey))
             {
-                UnityEngine.Debug.LogWarning(String.Format(
+                /*UnityEngine.Debug.LogWarning(String.Format(
                     "no mapping defined for xna joystick {0}:{1}:{2}",
                     xnaControllerNumber,
                     xnaJoystickAxis,
                     xnaAxisDirection
-                ));
+                ));*/
                 return null;
             }
             return mapperInstance.mXnaAxisToUnityNames[axisKey];

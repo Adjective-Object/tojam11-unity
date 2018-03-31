@@ -10,6 +10,8 @@ namespace Microsoft.Xna.Framework.Graphics
         Matrix _matrix;
         GraphicsDevice _graphicsDevice;
 
+        XnaRenderer renderer { get { return XnaRenderer.instance; } }
+
         public GraphicsDevice GraphicsDevice
         {
             get
@@ -91,18 +93,14 @@ namespace Microsoft.Xna.Framework.Graphics
                 float layerDepth = 0f)
         {
             Vector2 offsetPosition = position == null ? new Vector2(0, 0) : position.Value;
-            Rectangle offsetDestinationRectangle = destinationRectangle == null ? new Rectangle(0, 0, texture.Width, texture.Height) : destinationRectangle.Value;
-            Rectangle actualDestinationRectangle = new Rectangle(
-                offsetDestinationRectangle.X + offsetDestinationRectangle.X,
-                offsetDestinationRectangle.Y + offsetDestinationRectangle.Y,
-                offsetDestinationRectangle.Width,
-                offsetDestinationRectangle.Height
-            );
             Color realColor = color == null ? Color.White : color.Value;
             Vector2 realScale = scale == null ? new Vector2(1, 1) : scale.Value;
-            Vector2 realOrigin = origin == null ? new Vector2(0, 0) : scale.Value;
-            //TODO
+            Vector2 realOrigin = origin == null ? new Vector2(0, 0) : origin.Value;
+            Rectangle realRectangle = destinationRectangle == null ? new Rectangle((int)offsetPosition.X, (int)offsetPosition.Y, texture.Width, texture.Height) : destinationRectangle.Value;
+
+            renderer.Draw(texture, realRectangle);
         }
+
         public void Draw(Texture2D texture,
                         Vector2 position,
                         Rectangle? sourceRectangle,

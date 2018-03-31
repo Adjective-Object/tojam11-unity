@@ -19,10 +19,10 @@ namespace FakeXna.Input
         public static UnityEngine.KeyCode XnaToUnity(Keys xnaKey)
         {
             if (!mKeycodeMap.ContainsKey(xnaKey)) {
-                UnityEngine.Debug.LogWarning(string.Format(
+                /*UnityEngine.Debug.LogWarning(string.Format(
                     "Requested XNA keycode {0} is not defined in map",
                     xnaKey
-                ));
+                ));*/
                 return UnityEngine.KeyCode.Escape;
             }
             return mKeycodeMap[xnaKey];
@@ -35,10 +35,10 @@ namespace FakeXna.Input
                 InitKeycodeReverseMap();
             }
             if (!mKeycodeReverseMap.ContainsKey(unityKeyCode)) {
-                UnityEngine.Debug.LogWarning(string.Format(
+                /*UnityEngine.Debug.LogWarning(string.Format(
                     "Requested unity keycode {0} is not defined in map",
                     unityKeyCode
-                ));
+                ));*/
                 return Keys.Escape;
             }
             return mKeycodeReverseMap[unityKeyCode];
@@ -50,12 +50,12 @@ namespace FakeXna.Input
             foreach (KeyValuePair<Keys, UnityEngine.KeyCode> entry in mKeycodeMap) {
                 if (mKeycodeReverseMap.ContainsKey(entry.Value))
                 {
-                    UnityEngine.Debug.LogWarning(string.Format(
+                    /*UnityEngine.Debug.LogWarning(string.Format(
                         "Unity Keycode {0} is duplicated for XNA Key {1} and {2} ",
                         entry.Value,
                         mKeycodeReverseMap[entry.Value],
                         entry.Key
-                        ));
+                        ));*/
                 }
                 mKeycodeReverseMap[entry.Value] = entry.Key;
             }

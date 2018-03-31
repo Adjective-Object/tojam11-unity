@@ -6,7 +6,6 @@ namespace FakeXna
 {
     class FakeXnaRoot : Singleton<FakeXnaRoot>
     {
-        public MeshRenderer renderTarget;
         protected Game mGame;
         bool isRunning = true;
 
@@ -19,7 +18,7 @@ namespace FakeXna
                     mGame.Content.SetResourcesRootPath("tojam11");
                     mGame.Start();
                 } catch (Exception e) {
-                    isRunning = false;
+                    //isRunning = false;
                     throw;
                 }
             }
@@ -31,7 +30,7 @@ namespace FakeXna
                 try {
                     mGame.Update();
                 } catch (Exception e) {
-                    isRunning = false;
+                    //isRunning = false;
                     throw;
                 }
             }

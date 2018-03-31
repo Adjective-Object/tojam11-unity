@@ -446,6 +446,10 @@ namespace Microsoft.Xna.Framework
                 this.X.ToString(currentCulture), this.Y.ToString(currentCulture) });
         }
 
+        public UnityEngine.Vector2 ToUnity() {
+            return new UnityEngine.Vector2(X, Y);
+        }
+
         #endregion Public Methods
 
 

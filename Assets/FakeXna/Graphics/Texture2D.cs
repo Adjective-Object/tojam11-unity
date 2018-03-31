@@ -1,4 +1,6 @@
 ﻿using System;
+using UnityEngine;
+
 namespace Microsoft.Xna.Framework.Graphics
 {
     public class Texture2D : FakeXna.Content.IWrappedResource
@@ -21,8 +23,11 @@ namespace Microsoft.Xna.Framework.Graphics
         {
         }
 
+        public UnityEngine.Texture2D ToUnity() {
+            return mTexture;
+        }
 
-        public void setLoadedResource(Game game, Object o)
+        public void setLoadedResource(Game game, System.Object o)
         {
             mDevice = game.GraphicsDevice;
             mTexture = (UnityEngine.Texture2D)o;
@@ -49,7 +54,6 @@ namespace Microsoft.Xna.Framework.Graphics
                 outColorArray[i] = new Color(colors[i].r, colors[i].g, colors[i].b, colors[i].a);
             }
         }
-
 
         public void SetData(Color[] intendedTextureColors)
         {

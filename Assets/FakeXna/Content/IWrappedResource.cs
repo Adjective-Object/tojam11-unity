@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
+
 namespace FakeXna.Content
 {
     public interface IWrappedResource

@@ -42,14 +42,19 @@ namespace Adventure
             {
                 for (int x = -width; x < width; x++)
                 {
-                    if (AdventureGame.instance.collisionMap[(int)pos.Y + y, (int)pos.X + x] == 1)
+                    var map = AdventureGame.instance.collisionMap;
+                    if (map[Clamp((int)pos.Y + y, map.GetLength(0) - 1), Clamp((int)pos.X + x,map.GetLength(1) - 1)] == 1)
                         return true;
                 }
             }
             return false;
         }
 
-		public Character character;
+        private int Clamp(int value, int max) {
+            return value < 0 ? 0 : (value > max ? max : value);
+        }
+
+        public Character character;
 		override public void BindToEntity(InteractableEntity entity) {
 			base.BindToEntity(entity);
 			character = (Character) entity;

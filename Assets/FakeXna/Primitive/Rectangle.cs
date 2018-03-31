@@ -497,6 +497,10 @@ namespace Microsoft.Xna.Framework
             result.Height = Math.Max(value1.Bottom, value2.Bottom) - result.Y;
         }
 
+        public UnityEngine.Rect ToUnity() {
+            return new UnityEngine.Rect(X, Y, Width, Height);
+        }
+
         #endregion
 
         #region CustomExtensions
