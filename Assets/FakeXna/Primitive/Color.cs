@@ -87,9 +87,9 @@ namespace Microsoft.Xna.Framework.Graphics
         {
             _packedValue = 0;
 
-            R = Convert.ToByte(r * 255);
-            G = Convert.ToByte(g * 255);
-            B = Convert.ToByte(b * 255);
+            R = (byte)MathHelper.Clamp(r * 255, Byte.MinValue, Byte.MaxValue);
+            G = (byte)MathHelper.Clamp(g * 255, Byte.MinValue, Byte.MaxValue);
+            B = (byte)MathHelper.Clamp(b * 255, Byte.MinValue, Byte.MaxValue);
             A = 255;
         }
 
@@ -102,6 +102,14 @@ namespace Microsoft.Xna.Framework.Graphics
             A = (byte)255;
         }
 
+        public Color(int r, int g, int b)
+        {
+            _packedValue = 0;
+            R = (byte)r;
+            G = (byte)g;
+            B = (byte)b;
+            A = (byte)255;
+        }
 
         public Color(byte r, byte g, byte b, byte alpha)
         {
