@@ -22,7 +22,7 @@ namespace FakeXna.Input
                 /*UnityEngine.Debug.LogWarning(string.Format(
                     "Requested XNA keycode {0} is not defined in map",
                     xnaKey
-                ));*/
+                   ));*/
                 return UnityEngine.KeyCode.Escape;
             }
             return mKeycodeMap[xnaKey];
@@ -38,7 +38,7 @@ namespace FakeXna.Input
                 /*UnityEngine.Debug.LogWarning(string.Format(
                     "Requested unity keycode {0} is not defined in map",
                     unityKeyCode
-                ));*/
+                   ));*/
                 return Keys.Escape;
             }
             return mKeycodeReverseMap[unityKeyCode];

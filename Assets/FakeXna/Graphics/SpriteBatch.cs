@@ -10,7 +10,9 @@ namespace Microsoft.Xna.Framework.Graphics
         Matrix _matrix;
         GraphicsDevice _graphicsDevice;
 
-        XnaRenderer renderer { get { return XnaRenderer.instance; } }
+        XnaRenderer renderer {
+            get { return XnaRenderer.instance; }
+        }
 
         public GraphicsDevice GraphicsDevice
         {
@@ -82,15 +84,15 @@ namespace Microsoft.Xna.Framework.Graphics
         #region Draw
 
         public void Draw(Texture2D texture,
-                Vector2? position = null,
-                Rectangle? destinationRectangle = null,
-                Rectangle? sourceRectangle = null,
-                Vector2? origin = null,
-                float rotation = 0f,
-                Vector2? scale = null,
-                Color? color = null,
-                SpriteEffects effects = SpriteEffects.None,
-                float layerDepth = 0f)
+            Vector2? position = null,
+            Rectangle? destinationRectangle = null,
+            Rectangle? sourceRectangle = null,
+            Vector2? origin = null,
+            float rotation = 0f,
+            Vector2? scale = null,
+            Color? color = null,
+            SpriteEffects effects = SpriteEffects.None,
+            float layerDepth = 0f)
         {
             Vector2 offsetPosition = position == null ? new Vector2(0, 0) : position.Value;
             Color realColor = color == null ? Color.White : color.Value;
@@ -102,37 +104,37 @@ namespace Microsoft.Xna.Framework.Graphics
         }
 
         public void Draw(Texture2D texture,
-                        Vector2 position,
-                        Rectangle? sourceRectangle,
-                        Color color,
-                        float rotation,
-                        Vector2 origin,
-                        Vector2 scale,
-                        SpriteEffects effects,
-                        float layerDepth)
+            Vector2 position,
+            Rectangle? sourceRectangle,
+            Color color,
+            float rotation,
+            Vector2 origin,
+            Vector2 scale,
+            SpriteEffects effects,
+            float layerDepth)
         {
             Draw(texture, position, null, sourceRectangle, origin, rotation, scale, color, effects, layerDepth);
         }
         public void Draw(Texture2D texture,
-                        Vector2 position,
-                        Rectangle? sourceRectangle,
-                        Color color,
-                        float rotation,
-                        Vector2 origin,
-                        float scale,
-                        SpriteEffects effects,
-                        float layerDepth)
+            Vector2 position,
+            Rectangle? sourceRectangle,
+            Color color,
+            float rotation,
+            Vector2 origin,
+            float scale,
+            SpriteEffects effects,
+            float layerDepth)
         {
             Draw(texture, position, null, sourceRectangle, origin, rotation, new Vector2(scale, scale), color, effects, layerDepth);
         }
         public void Draw(Texture2D texture,
-                    Rectangle destinationRectangle,
-                    Rectangle? sourceRectangle,
-                    Color color,
-                    float rotation,
-                    Vector2 origin,
-                    SpriteEffects effects,
-                    float layerDepth)
+            Rectangle destinationRectangle,
+            Rectangle? sourceRectangle,
+            Color color,
+            float rotation,
+            Vector2 origin,
+            SpriteEffects effects,
+            float layerDepth)
         {
             Draw(texture, null, destinationRectangle, sourceRectangle, origin, rotation, null, color, effects, layerDepth);
         }

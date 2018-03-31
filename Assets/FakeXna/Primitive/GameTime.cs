@@ -31,11 +31,11 @@ namespace Microsoft.Xna.Framework
         public GameTime(
             TimeSpan elapsedGameTime,
             TimeSpan totalGameTime
-        )
+            )
         {
             mElapsedGameTime = elapsedGameTime;
             mTotalGameTime = totalGameTime;
-            
+
         }
     }
 }

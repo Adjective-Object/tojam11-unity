@@ -64,7 +64,7 @@ namespace Microsoft.Xna.Framework.Input
 
         /// <summary>
         /// Big button.
-        /// </summary>    
+        /// </summary>
         BigButton = 2048,
 
         /// <summary>
@@ -104,12 +104,12 @@ namespace Microsoft.Xna.Framework.Input
 
         /// <summary>
         /// Right stick is towards up.
-        /// </summary>   
+        /// </summary>
         RightThumbstickUp = 16777216,
 
         /// <summary>
         /// Right stick is towards down.
-        /// </summary>   
+        /// </summary>
         RightThumbstickDown = 33554432,
 
         /// <summary>
@@ -124,12 +124,12 @@ namespace Microsoft.Xna.Framework.Input
 
         /// <summary>
         /// Left stick is towards up.
-        /// </summary>  
+        /// </summary>
         LeftThumbstickUp = 268435456,
 
         /// <summary>
         /// Left stick is towards down.
-        /// </summary>  
+        /// </summary>
         LeftThumbstickDown = 536870912,
 
         /// <summary>

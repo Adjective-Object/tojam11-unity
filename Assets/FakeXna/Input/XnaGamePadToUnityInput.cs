@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
-namespace FakeXna.Input 
+namespace FakeXna.Input
 {
     public class XnaGamePadToUnityInput : Singleton<XnaGamePadToUnityInput>
     {
@@ -86,7 +86,7 @@ namespace FakeXna.Input
                     "no mapping defined for xna button {0}:{1}",
                     xnaControllerNumber,
                     xnaButton
-                ));*/ 
+                   ));*/
                 return null;
             }
             return mapperInstance.mXnaButtonsToUnityNames[buttonKey];
@@ -108,7 +108,7 @@ namespace FakeXna.Input
                     xnaControllerNumber,
                     xnaJoystickAxis,
                     xnaAxisDirection
-                ));*/
+                   ));*/
                 return null;
             }
             return mapperInstance.mXnaAxisToUnityNames[axisKey];

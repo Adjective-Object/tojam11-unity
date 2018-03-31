@@ -121,7 +121,7 @@ namespace Microsoft.Xna.Framework
                     this.Y.ToString(), " ",
                     this.Z.ToString(), " ",
                     this.W.ToString()
-                );
+                    );
             }
         }
 
@@ -431,9 +431,9 @@ namespace Microsoft.Xna.Framework
             float cosYaw = (float)Math.Cos(halfYaw);
 
             return new Quaternion((cosYaw * sinPitch * cosRoll) + (sinYaw * cosPitch * sinRoll),
-                                  (sinYaw * cosPitch * cosRoll) - (cosYaw * sinPitch * sinRoll),
-                                  (cosYaw * cosPitch * sinRoll) - (sinYaw * sinPitch * cosRoll),
-                                  (cosYaw * cosPitch * cosRoll) + (sinYaw * sinPitch * sinRoll));
+                       (sinYaw * cosPitch * cosRoll) - (cosYaw * sinPitch * sinRoll),
+                       (cosYaw * cosPitch * sinRoll) - (sinYaw * sinPitch * cosRoll),
+                       (cosYaw * cosPitch * cosRoll) + (sinYaw * sinPitch * sinRoll));
         }
 
         /// <summary>

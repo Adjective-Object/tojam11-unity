@@ -51,7 +51,7 @@ namespace Microsoft.Xna.Framework.Graphics
             mGraphicsDevice = new GraphicsDevice(
                 mPreferredBackBufferWidth,
                 mPreferredBackBufferHeight
-            );
+                );
             mBoundGame.GraphicsDevice = mGraphicsDevice;
         }
 

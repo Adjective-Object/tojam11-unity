@@ -116,7 +116,7 @@ namespace Microsoft.Xna.Framework.Graphics
         #endregion
 
         /// <summary>
-        /// Gets the aspect ratio of this <see cref="Viewport"/>, which is width / height. 
+        /// Gets the aspect ratio of this <see cref="Viewport"/>, which is width / height.
         /// </summary>
         public float AspectRatio
         {

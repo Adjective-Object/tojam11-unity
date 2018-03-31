@@ -23,7 +23,7 @@ namespace Microsoft.Xna.Framework.Graphics
                 height,
                 24, // depth (bits in depth buffer)
                 RenderTextureFormat.ARGB32
-            );
+                );
             Viewport = new Viewport(0, 0, this.mTexture.width, this.mTexture.height);
         }
 
