@@ -13,6 +13,7 @@ namespace Microsoft.Xna.Framework.Input
             Array values = Keys.GetValues(typeof(Keys));
             foreach (Keys xnaKey in values)
             {
+                if (xnaKey == Keys.None) continue;
                 UnityEngine.KeyCode? unityKeyCode = XnaKeysToUnityKeyCode.XnaToUnity(xnaKey);
                 if (unityKeyCode.HasValue)
                 {
