@@ -6,7 +6,7 @@ namespace FakeXna.Input
 {
     class XnaKeysToUnityKeyCode
     {
-        private static Dictionary<Keys, Nullable<UnityEngine.KeyCode>> mKeycodeMap = new Dictionary<Keys, Nullable<UnityEngine.KeyCode>>
+        private static Dictionary<Keys, Nullable<UnityEngine.KeyCode> > mKeycodeMap = new Dictionary<Keys, Nullable<UnityEngine.KeyCode> >
         {
             {Keys.Space, UnityEngine.KeyCode.Space},
             {Keys.Up, UnityEngine.KeyCode.UpArrow},
@@ -180,9 +180,9 @@ namespace FakeXna.Input
         {
             if (!mKeycodeMap.ContainsKey(xnaKey)) {
                 UnityEngine.Debug.LogWarning(string.Format(
-                    "Requested XNA keycode {0} is not defined in map",
-                    xnaKey
-                ));
+                        "Requested XNA keycode {0} is not defined in map",
+                        xnaKey
+                        ));
                 return UnityEngine.KeyCode.Escape;
             }
             return mKeycodeMap[xnaKey];
@@ -196,9 +196,9 @@ namespace FakeXna.Input
             }
             if (!mKeycodeReverseMap.ContainsKey(unityKeyCode)) {
                 UnityEngine.Debug.LogWarning(string.Format(
-                    "Requested unity keycode {0} is not defined in map",
-                    unityKeyCode
-                ));
+                        "Requested unity keycode {0} is not defined in map",
+                        unityKeyCode
+                        ));
                 return Keys.Escape;
             }
             return mKeycodeReverseMap[unityKeyCode];
@@ -207,17 +207,17 @@ namespace FakeXna.Input
         private static void InitKeycodeReverseMap()
         {
             mKeycodeReverseMap = new Dictionary<UnityEngine.KeyCode, Keys>();
-            foreach (KeyValuePair<Keys, Nullable<UnityEngine.KeyCode>> entry in mKeycodeMap) {
+            foreach (KeyValuePair<Keys, Nullable<UnityEngine.KeyCode> > entry in mKeycodeMap) {
                 if (entry.Value == null) continue;
                 UnityEngine.KeyCode code = entry.Value.Value;
                 if (mKeycodeReverseMap.ContainsKey(code))
                 {
                     UnityEngine.Debug.LogWarning(string.Format(
-                        "Unity Keycode {0} is duplicated for XNA Key {1} and {2} ",
-                        entry.Value,
-                        mKeycodeReverseMap[code],
-                        entry.Key
-                        ));
+                            "Unity Keycode {0} is duplicated for XNA Key {1} and {2} ",
+                            entry.Value,
+                            mKeycodeReverseMap[code],
+                            entry.Key
+                            ));
                 }
                 mKeycodeReverseMap[code] = entry.Key;
             }

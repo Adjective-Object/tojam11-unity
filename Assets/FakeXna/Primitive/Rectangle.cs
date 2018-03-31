@@ -9,7 +9,7 @@ using System.Diagnostics;
 namespace Microsoft.Xna.Framework
 {
     /// <summary>
-    /// Describes a 2D-rectangle. 
+    /// Describes a 2D-rectangle.
     /// </summary>
     [DataContract]
     [DebuggerDisplay("{DebugDisplayString,nq}")]
@@ -329,7 +329,7 @@ namespace Microsoft.Xna.Framework
         }
 
         /// <summary>
-        /// Adjusts the edges of this <see cref="Rectangle"/> by specified horizontal and vertical amounts. 
+        /// Adjusts the edges of this <see cref="Rectangle"/> by specified horizontal and vertical amounts.
         /// </summary>
         /// <param name="horizontalAmount">Value to adjust the left and right edges.</param>
         /// <param name="verticalAmount">Value to adjust the top and bottom edges.</param>
@@ -342,7 +342,7 @@ namespace Microsoft.Xna.Framework
         }
 
         /// <summary>
-        /// Adjusts the edges of this <see cref="Rectangle"/> by specified horizontal and vertical amounts. 
+        /// Adjusts the edges of this <see cref="Rectangle"/> by specified horizontal and vertical amounts.
         /// </summary>
         /// <param name="horizontalAmount">Value to adjust the left and right edges.</param>
         /// <param name="verticalAmount">Value to adjust the top and bottom edges.</param>
@@ -376,9 +376,9 @@ namespace Microsoft.Xna.Framework
         public void Intersects(ref Rectangle value, out bool result)
         {
             result = value.Left < Right &&
-                     Left < value.Right &&
-                     value.Top < Bottom &&
-                     Top < value.Bottom;
+                Left < value.Right &&
+                value.Top < Bottom &&
+                Top < value.Bottom;
         }
 
         /// <summary>
@@ -479,8 +479,8 @@ namespace Microsoft.Xna.Framework
             int x = Math.Min(value1.X, value2.X);
             int y = Math.Min(value1.Y, value2.Y);
             return new Rectangle(x, y,
-                                 Math.Max(value1.Right, value2.Right) - x,
-                                     Math.Max(value1.Bottom, value2.Bottom) - y);
+                       Math.Max(value1.Right, value2.Right) - x,
+                       Math.Max(value1.Bottom, value2.Bottom) - y);
         }
 
         /// <summary>
@@ -507,7 +507,7 @@ namespace Microsoft.Xna.Framework
                 (int)(r.X / divisor),
                 (int)(r.Width / divisor),
                 (int)(r.Height / divisor)
-            );
+                );
         }
         #endregion
 

@@ -7,10 +7,14 @@ namespace Microsoft.Xna.Framework.Input
     public class GamePadState
     {
         private GamepadButtonState mGamepadButtonState;
-        public GamepadButtonState Buttons { get { return this.mGamepadButtonState; } }
+        public GamepadButtonState Buttons {
+            get { return this.mGamepadButtonState; }
+        }
 
         private GamepadThumbstickState mGamepadThumbstickState;
-        public GamepadThumbstickState ThumbSticks { get { return this.mGamepadThumbstickState; } }
+        public GamepadThumbstickState ThumbSticks {
+            get { return this.mGamepadThumbstickState; }
+        }
 
         // DPadState
         public struct DPadState
@@ -26,12 +30,12 @@ namespace Microsoft.Xna.Framework.Input
             get
             {
                 return new DPadState()
-                {
-                    Up = mGamepadButtonState.DPadUp,
-                    Down = mGamepadButtonState.DPadDown,
-                    Left = mGamepadButtonState.DPadLeft,
-                    Right = mGamepadButtonState.DPadRight
-                };
+                       {
+                           Up = mGamepadButtonState.DPadUp,
+                           Down = mGamepadButtonState.DPadDown,
+                           Left = mGamepadButtonState.DPadLeft,
+                           Right = mGamepadButtonState.DPadRight
+                       };
             }
         }
 

@@ -1,28 +1,28 @@
 ﻿#region License
 /*
-MIT License
-Copyright © 2006 The Mono.Xna Team
+   MIT License
+   Copyright © 2006 The Mono.Xna Team
 
-All rights reserved.
+   All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+   Permission is hereby granted, free of charge, to any person obtaining a copy
+   of this software and associated documentation files (the "Software"), to deal
+   in the Software without restriction, including without limitation the rights
+   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+   copies of the Software, and to permit persons to whom the Software is
+   furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+   The above copyright notice and this permission notice shall be included in all
+   copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-*/
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+   SOFTWARE.
+ */
 #endregion License
 
 using System;
@@ -35,14 +35,14 @@ namespace Microsoft.Xna.Framework
     {
         #region Private Fields
 
-        private static  Vector3 zero = new Vector3(0f, 0f, 0f);
-        private static  Vector3 one = new Vector3(1f, 1f, 1f);
-        private static  Vector3 unitX = new Vector3(1f, 0f, 0f);
-        private static  Vector3 unitY = new Vector3(0f, 1f, 0f);
-        private static  Vector3 unitZ = new Vector3(0f, 0f, 1f);
-        private static  Vector3 up = new Vector3(0f, 1f, 0f);
-        private static  Vector3 down = new Vector3(0f, -1f, 0f);
-        private static  Vector3 right = new Vector3(1f, 0f, 0f);
+        private static Vector3 zero = new Vector3(0f, 0f, 0f);
+        private static Vector3 one = new Vector3(1f, 1f, 1f);
+        private static Vector3 unitX = new Vector3(1f, 0f, 0f);
+        private static Vector3 unitY = new Vector3(0f, 1f, 0f);
+        private static Vector3 unitZ = new Vector3(0f, 0f, 1f);
+        private static Vector3 up = new Vector3(0f, 1f, 0f);
+        private static Vector3 down = new Vector3(0f, -1f, 0f);
+        private static Vector3 right = new Vector3(1f, 0f, 0f);
         private static Vector3 left = new Vector3(-1f, 0f, 0f);
         private static Vector3 forward = new Vector3(0f, 0f, -1f);
         private static Vector3 backward = new Vector3(0f, 0f, 1f);
@@ -222,8 +222,8 @@ namespace Microsoft.Xna.Framework
         public static void Cross(ref Vector3 vector1, ref Vector3 vector2, out Vector3 result)
         {
             result = new Vector3(vector1.Y * vector2.Z - vector2.Y * vector1.Z,
-                                 -(vector1.X * vector2.Z - vector2.X * vector1.Z),
-                                 vector1.X * vector2.Y - vector2.X * vector1.Y);
+                    -(vector1.X * vector2.Z - vector2.X * vector1.Z),
+                    vector1.X * vector2.Y - vector2.X * vector1.Y);
         }
 
         public static float Distance(Vector3 vector1, Vector3 vector2)
@@ -249,8 +249,8 @@ namespace Microsoft.Xna.Framework
         public static void DistanceSquared(ref Vector3 value1, ref Vector3 value2, out float result)
         {
             result = (value1.X - value2.X) * (value1.X - value2.X) +
-                     (value1.Y - value2.Y) * (value1.Y - value2.Y) +
-                     (value1.Z - value2.Z) * (value1.Z - value2.Z);
+                (value1.Y - value2.Y) * (value1.Y - value2.Y) +
+                (value1.Z - value2.Z) * (value1.Z - value2.Z);
         }
 
         public static Vector3 Divide(Vector3 value1, Vector3 value2)
@@ -353,7 +353,7 @@ namespace Microsoft.Xna.Framework
                 MathHelper.Lerp(value1.Y, value2.Y, amount),
                 MathHelper.Lerp(value1.Z, value2.Z, amount));
         }
-                
+
         public static Vector3 Max(Vector3 value1, Vector3 value2)
         {
             return new Vector3(
@@ -511,8 +511,8 @@ namespace Microsoft.Xna.Framework
         public static void Transform(ref Vector3 position, ref Matrix matrix, out Vector3 result)
         {
             result = new Vector3((position.X * matrix.M11) + (position.Y * matrix.M21) + (position.Z * matrix.M31) + matrix.M41,
-                                 (position.X * matrix.M12) + (position.Y * matrix.M22) + (position.Z * matrix.M32) + matrix.M42,
-                                 (position.X * matrix.M13) + (position.Y * matrix.M23) + (position.Z * matrix.M33) + matrix.M43);
+                    (position.X * matrix.M12) + (position.Y * matrix.M22) + (position.Z * matrix.M32) + matrix.M42,
+                    (position.X * matrix.M13) + (position.Y * matrix.M23) + (position.Z * matrix.M33) + matrix.M43);
         }
 
         public static Vector3 TransformNormal(Vector3 normal, Matrix matrix)
@@ -524,8 +524,8 @@ namespace Microsoft.Xna.Framework
         public static void TransformNormal(ref Vector3 normal, ref Matrix matrix, out Vector3 result)
         {
             result = new Vector3((normal.X * matrix.M11) + (normal.Y * matrix.M21) + (normal.Z * matrix.M31),
-                                 (normal.X * matrix.M12) + (normal.Y * matrix.M22) + (normal.Z * matrix.M32),
-                                 (normal.X * matrix.M13) + (normal.Y * matrix.M23) + (normal.Z * matrix.M33));
+                    (normal.X * matrix.M12) + (normal.Y * matrix.M22) + (normal.Z * matrix.M32),
+                    (normal.X * matrix.M13) + (normal.Y * matrix.M23) + (normal.Z * matrix.M33));
         }
 
         #endregion Public methods
@@ -536,8 +536,8 @@ namespace Microsoft.Xna.Framework
         public static bool operator ==(Vector3 value1, Vector3 value2)
         {
             return value1.X == value2.X
-                && value1.Y == value2.Y
-                && value1.Z == value2.Z;
+                   && value1.Y == value2.Y
+                   && value1.Z == value2.Z;
         }
 
         public static bool operator !=(Vector3 value1, Vector3 value2)

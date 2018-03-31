@@ -23,7 +23,7 @@ namespace Microsoft.Xna.Framework.Graphics
             return new Vector2(
                 size.x,
                 size.y
-            );
+                );
         }
     }
 }

@@ -22,7 +22,7 @@ namespace Microsoft.Xna.Framework.Input
                 ButtonState.Released, // XButton1
                 ButtonState.Released, // XButton2
                 (int)UnityEngine.Input.mouseScrollDelta.x // horizontazlScrollWheel
-            );
+                );
         }
     }
 }

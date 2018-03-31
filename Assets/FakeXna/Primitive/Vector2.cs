@@ -1,28 +1,28 @@
 ﻿#region License
 /*
-MIT License
-Copyright © 2006 The Mono.Xna Team
+   MIT License
+   Copyright © 2006 The Mono.Xna Team
 
-All rights reserved.
+   All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+   Permission is hereby granted, free of charge, to any person obtaining a copy
+   of this software and associated documentation files (the "Software"), to deal
+   in the Software without restriction, including without limitation the rights
+   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+   copies of the Software, and to permit persons to whom the Software is
+   furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+   The above copyright notice and this permission notice shall be included in all
+   copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-*/
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+   SOFTWARE.
+ */
 #endregion License
 
 using System;
@@ -288,7 +288,7 @@ namespace Microsoft.Xna.Framework
         public static Vector2 Max(Vector2 value1, Vector2 value2)
         {
             return new Vector2(value1.X > value2.X ? value1.X : value2.X,
-                               value1.Y > value2.Y ? value1.Y : value2.Y);
+                       value1.Y > value2.Y ? value1.Y : value2.Y);
         }
 
         public static void Max(ref Vector2 value1, ref Vector2 value2, out Vector2 result)
@@ -300,7 +300,7 @@ namespace Microsoft.Xna.Framework
         public static Vector2 Min(Vector2 value1, Vector2 value2)
         {
             return new Vector2(value1.X < value2.X ? value1.X : value2.X,
-                               value1.Y < value2.Y ? value1.Y : value2.Y);
+                       value1.Y < value2.Y ? value1.Y : value2.Y);
         }
 
         public static void Min(ref Vector2 value1, ref Vector2 value2, out Vector2 result)
@@ -406,24 +406,24 @@ namespace Microsoft.Xna.Framework
         public static void Transform(ref Vector2 position, ref Matrix matrix, out Vector2 result)
         {
             result = new Vector2((position.X * matrix.M11) + (position.Y * matrix.M21) + matrix.M41,
-                                 (position.X * matrix.M12) + (position.Y * matrix.M22) + matrix.M42);
+                    (position.X * matrix.M12) + (position.Y * matrix.M22) + matrix.M42);
         }
 
         public static void Transform(
-         Vector2[] sourceArray,
-         ref Matrix matrix,
-         Vector2[] destinationArray)
+            Vector2[] sourceArray,
+            ref Matrix matrix,
+            Vector2[] destinationArray)
         {
         }
 
 
         public static void Transform(
-         Vector2[] sourceArray,
-         int sourceIndex,
-         ref Matrix matrix,
-         Vector2[] destinationArray,
-         int destinationIndex,
-         int length)
+            Vector2[] sourceArray,
+            int sourceIndex,
+            ref Matrix matrix,
+            Vector2[] destinationArray,
+            int destinationIndex,
+            int length)
         {
         }
 
@@ -436,14 +436,15 @@ namespace Microsoft.Xna.Framework
         public static void TransformNormal(ref Vector2 normal, ref Matrix matrix, out Vector2 result)
         {
             result = new Vector2((normal.X * matrix.M11) + (normal.Y * matrix.M21),
-                                 (normal.X * matrix.M12) + (normal.Y * matrix.M22));
+                    (normal.X * matrix.M12) + (normal.Y * matrix.M22));
         }
 
         public override string ToString()
         {
             CultureInfo currentCulture = CultureInfo.CurrentCulture;
             return string.Format(currentCulture, "{{X:{0} Y:{1}}}", new object[] {
-                this.X.ToString(currentCulture), this.Y.ToString(currentCulture) });
+                this.X.ToString(currentCulture), this.Y.ToString(currentCulture)
+            });
         }
 
         #endregion Public Methods

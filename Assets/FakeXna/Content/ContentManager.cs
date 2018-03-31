@@ -21,11 +21,11 @@ namespace Microsoft.Xna.Framework.Content
             string loadedPath = System.IO.Path.Combine(System.IO.Path.Combine(mXnaResourcesRootPath, mRootDirectory), filename);
             Object loadedResource = UnityEngine.Resources.Load(
                 loadedPath
-            );
+                );
             if (loadedResource == null) {
                 UnityEngine.Debug.LogWarning(
                     "Failed to load resource at path " + loadedPath
-                );
+                    );
             }
             result.setLoadedResource(mGame, loadedResource);
             return result;

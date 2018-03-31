@@ -68,7 +68,9 @@ namespace Microsoft.Xna.Framework.Audio
 
         // TODO maybe clean up audio sources or something
         /// <summary>Indicates whether the object is disposed.</summary>
-        public bool IsDisposed { get { return false; } }
+        public bool IsDisposed {
+            get { return false; }
+        }
 
         public void Play()
         {

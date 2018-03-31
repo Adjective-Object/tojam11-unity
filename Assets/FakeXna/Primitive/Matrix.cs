@@ -1,28 +1,28 @@
 ﻿#region License
 /*
-MIT License
-Copyright © 2006 The Mono.Xna Team
+   MIT License
+   Copyright © 2006 The Mono.Xna Team
 
-All rights reserved.
+   All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+   Permission is hereby granted, free of charge, to any person obtaining a copy
+   of this software and associated documentation files (the "Software"), to deal
+   in the Software without restriction, including without limitation the rights
+   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+   copies of the Software, and to permit persons to whom the Software is
+   furnished to do so, subject to the following conditions:
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+   The above copyright notice and this permission notice shall be included in all
+   copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-*/
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+   SOFTWARE.
+ */
 #endregion License
 
 using System;
@@ -34,7 +34,7 @@ namespace Microsoft.Xna.Framework
         #region Public Constructors
 
         public Matrix(float m11, float m12, float m13, float m14, float m21, float m22, float m23, float m24, float m31,
-                      float m32, float m33, float m34, float m41, float m42, float m43, float m44)
+            float m32, float m33, float m34, float m41, float m42, float m43, float m44)
         {
             this.M11 = m11;
             this.M12 = m12;
@@ -81,9 +81,9 @@ namespace Microsoft.Xna.Framework
 
         #region Private Members
         private static Matrix identity = new Matrix(1f, 0f, 0f, 0f,
-                                                    0f, 1f, 0f, 0f,
-                                                    0f, 0f, 1f, 0f,
-                                                    0f, 0f, 0f, 1f);
+                0f, 1f, 0f, 0f,
+                0f, 0f, 1f, 0f,
+                0f, 0f, 0f, 1f);
         #endregion Private Members
 
 
@@ -144,11 +144,11 @@ namespace Microsoft.Xna.Framework
         public static float[] ToFloatArray(Matrix mat)
         {
             float[] matarray = {
-                                    mat.M11, mat.M12, mat.M13, mat.M14,
-                                    mat.M21, mat.M22, mat.M23, mat.M24,
-                                    mat.M31, mat.M32, mat.M33, mat.M34,
-                                    mat.M41, mat.M42, mat.M43, mat.M44
-                                };
+                mat.M11, mat.M12, mat.M13, mat.M14,
+                mat.M21, mat.M22, mat.M23, mat.M24,
+                mat.M31, mat.M32, mat.M33, mat.M34,
+                mat.M41, mat.M42, mat.M43, mat.M44
+            };
             return matarray;
         }
 
@@ -705,15 +705,15 @@ namespace Microsoft.Xna.Framework
         {
             ///
             // Use Laplace expansion theorem to calculate the inverse of a 4x4 matrix
-            // 
-            // 1. Calculate the 2x2 determinants needed the 4x4 determinant based on the 2x2 determinants 
+            //
+            // 1. Calculate the 2x2 determinants needed the 4x4 determinant based on the 2x2 determinants
             // 3. Create the adjugate matrix, which satisfies: A * adj(A) = det(A) * I
             // 4. Divide adjugate matrix with the determinant to find the inverse
 
             float det1, det2, det3, det4, det5, det6, det7, det8, det9, det10, det11, det12;
             float detMatrix;
             findDeterminants(ref matrix, out detMatrix, out det1, out det2, out det3, out det4, out det5, out det6,
-                             out det7, out det8, out det9, out det10, out det11, out det12);
+                out det7, out det8, out det9, out det10, out det11, out det12);
 
             float invDetMatrix = 1f / detMatrix;
 
@@ -998,12 +998,12 @@ namespace Microsoft.Xna.Framework
         #region Private Static Methods
 
         /// <summary>
-        /// Helper method for using the Laplace expansion theorem using two rows expansions to calculate major and 
+        /// Helper method for using the Laplace expansion theorem using two rows expansions to calculate major and
         /// minor determinants of a 4x4 matrix. This method is used for inverting a matrix.
         /// </summary>
         private static void findDeterminants(ref Matrix matrix, out float major,
-                                             out float minor1, out float minor2, out float minor3, out float minor4, out float minor5, out float minor6,
-                                             out float minor7, out float minor8, out float minor9, out float minor10, out float minor11, out float minor12)
+            out float minor1, out float minor2, out float minor3, out float minor4, out float minor5, out float minor6,
+            out float minor7, out float minor8, out float minor9, out float minor10, out float minor11, out float minor12)
         {
             double det1 = (double)matrix.M11 * (double)matrix.M22 - (double)matrix.M12 * (double)matrix.M21;
             double det2 = (double)matrix.M11 * (double)matrix.M23 - (double)matrix.M13 * (double)matrix.M21;

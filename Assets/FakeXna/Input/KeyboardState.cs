@@ -32,9 +32,9 @@ namespace Microsoft.Xna.Framework.Input
             if (!downKeys.ContainsKey(xnaKey))
             {
                 UnityEngine.Debug.LogWarning(string.Format(
-                    "Requested XNA keycode {0} not present in down keyboard state",
-                    xnaKey
-                ));
+                        "Requested XNA keycode {0} not present in down keyboard state",
+                        xnaKey
+                        ));
             }
             return downKeys.GetValueOrDefault(xnaKey, false);
         }
@@ -44,9 +44,9 @@ namespace Microsoft.Xna.Framework.Input
             if (!upKeys.ContainsKey(xnaKey))
             {
                 UnityEngine.Debug.LogWarning(string.Format(
-                    "Requested XNA keycode {0} not present in up keyboard state",
-                    xnaKey
-                ));
+                        "Requested XNA keycode {0} not present in up keyboard state",
+                        xnaKey
+                        ));
             }
             return upKeys.GetValueOrDefault(xnaKey, false);
         }
