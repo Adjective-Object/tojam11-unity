@@ -232,7 +232,7 @@ namespace Adventure
 			tylerSheet = Content.Load<Texture2D> ("tylerSheet");
             tylerFont = Content.Load<SpriteFont> ("Vectorb");
             tylerFont2 = Content.Load<SpriteFont> ("Monaco"); // Should be Arial but I don't have that
-            tylerFont3 = Content.Load<SpriteFont> ("Visitor");
+            tylerFont3 = Content.Load<SpriteFont> ("visitor1");
 		}
 
 
