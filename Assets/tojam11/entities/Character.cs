@@ -109,6 +109,9 @@ namespace Adventure
 
 		// apply some color pallette to a texture using reference colors
 		private Texture2D ApplyPallette(Texture2D texture, Color [] palette) {
+            if (true) {
+                return texture;
+            }
 			Texture2D newTexture = new Texture2D(
 				texture.GraphicsDevice, texture.Width, texture.Height);
 

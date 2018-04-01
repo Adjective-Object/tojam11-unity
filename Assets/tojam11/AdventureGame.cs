@@ -112,7 +112,7 @@ namespace Adventure
 		protected override void Initialize ()
 		{
 			UnityEngine.Debug.Log("AdventureGame Initialize Called");
-            currentState = GameState.StartGame;
+            currentState = GameState.Game;
 
 			// initialize my fields
 			entities = new List<BaseEntity> ();

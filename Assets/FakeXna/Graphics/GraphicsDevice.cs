@@ -34,6 +34,7 @@ namespace Microsoft.Xna.Framework.Graphics
 
         public void Clear(Color color)
         {
+            XnaRenderer.instance.Clear();
             UnityEngine.Color fillColor = new UnityEngine.Color(color.R, color.G, color.B);
             RenderTexture.active = mTexture;
             // TODO abstract accross different rendering backends. Maybe use blit here with a
